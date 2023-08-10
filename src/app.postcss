@@ -1,0 +1,20 @@
+/* Write your global styles here, in PostCSS syntax */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	html {
+		box-sizing: border-box;
+	}
+
+	*,
+	*:before,
+	*:after {
+		box-sizing: inherit;
+	}
+
+	button {
+		@apply bg-blue-700 px-5 py-2 rounded-md font-bold leading-none;
+	}
+}
