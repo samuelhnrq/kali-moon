@@ -1,5 +1,4 @@
 <script lang="ts">
-	import { DateTime } from 'luxon';
 	import * as lune from 'lune';
 
 	let moons: Date[] = [];
@@ -8,11 +7,10 @@
 
 	function listLunePhases(ev: SubmitEvent) {
 		ev.preventDefault();
-		console.log(startDate);
-		const parsedStart = DateTime.fromISO(startDate);
-		const parsedEnd = DateTime.fromISO(endDate);
+		const parsedStart = new Date(startDate);
+		const parsedEnd = new Date(endDate);
 
-		moons = lune.phase_range(parsedStart.toJSDate(), parsedEnd.toJSDate(), lune.PHASE_FULL);
+		moons = lune.phase_range(parsedStart, parsedEnd, lune.PHASE_FULL);
 	}
 
 	let form: HTMLFormElement;
